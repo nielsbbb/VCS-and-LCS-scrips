@@ -205,7 +205,9 @@
 00BC: print_now '~g~Press Left For Next char ~r~Press Down To Close ~b~ Press Up For Weapons' time 50 flag 1
 0002: goto @ACTION0
 
-
+NEXT:
+000A: 0@ += 1
+0002: goto @ACTION0
 
 :WEPUP
 0001: wait 0
@@ -221,104 +223,7 @@
 000A: $100 += 1
 0002: goto @WEPUP
 
-:NEXT 
-009B: delete_char $10
-0169: remove_blip $11
-0001: wait 90
-0001: wait 90
-009A: create_char 1 model 1@ at $1 $2 $3 store_to $10 
-018C: add_blip_for_char $10 store_to $11
-016A: change_blip_colour $11 to 7 
-:ACTION1
-0001: wait 0
-00E6:   is_button_pressed 0 button 10
-004C: goto_if_true @ADD
-00E6:   is_button_pressed 0 button 11
-004C: goto_if_true @NEXT1
-00E6:   is_button_pressed 0 button 9
-004C: goto_if_true @ENDE
-00BC: print_now '~g~Press Left For Prev Char ~g~Press Left For Next Char ~r~Press Down To Close' time 50 flag 1
-0002: goto @ACTION1
 
-:NEXT1
-009B: delete_char $10
-0169: remove_blip $11
-0001: wait 90
-024C: request_model 2@
-0390: load_all_models_now 
-0001: wait 90
-009A: create_char 1 model 2@ at $1 $2 $3 store_to $10 
-018C: add_blip_for_char $10 store_to $11
-:ACTION2
-0001: wait 0
-00E6:   is_button_pressed 0 button 10
-004C: goto_if_true @NEXT
-00E6:   is_button_pressed 0 button 11
-004C: goto_if_true @NEXT2
-00E6:   is_button_pressed 0 button 9
-004C: goto_if_true @ENDE
-00BC: print_now '~g~Press Left For Prev Char ~g~Press Left For Next Char ~r~Press Down To Close' time 50 flag 1
-0002: goto @ACTION2
-
-:NEXT2
-009B: delete_char $10
-0169: remove_blip $11
-0001: wait 90
-024C: request_model 3@
-0390: load_all_models_now 
-0001: wait 90
-009A: create_char 1 model 3@ at $1 $2 $3 store_to $10 
-018C: add_blip_for_char $10 store_to $11
-:ACTION3
-0001: wait 0
-00E6:   is_button_pressed 0 button 10
-004C: goto_if_true @NEXT1
-00E6:   is_button_pressed 0 button 11
-004C: goto_if_true @NEXT3
-00E6:   is_button_pressed 0 button 9
-004C: goto_if_true @ENDE
-00BC: print_now '~g~Press Left For Prev Char ~g~Press Left For Next Char ~r~Press Down To Close' time 50 flag 1
-0002: goto @ACTION3
-
-:NEXT3
-009B: delete_char $10
-0169: remove_blip $11
-0001: wait 90
-024C: request_model 4@
-0390: load_all_models_now 
-0001: wait 90
-009A: create_char 1 model 4@ at $1 $2 $3 store_to $10 
-018C: add_blip_for_char $10 store_to $11
-:ACTION4
-0001: wait 0
-00E6:   is_button_pressed 0 button 10
-004C: goto_if_true @NEXT2
-00E6:   is_button_pressed 0 button 11
-004C: goto_if_true @NEXT4
-00E6:   is_button_pressed 0 button 9
-004C: goto_if_true @ENDE
-00BC: print_now '~g~Press Left For Prev Char ~g~Press Left For Next Char ~r~Press Down To Close' time 50 flag 1
-0002: goto @ACTION4
-
-:NEXT4
-009B: delete_char $10
-0169: remove_blip $11
-0001: wait 90
-024C: request_model 5@
-0390: load_all_models_now 
-0001: wait 90
-009A: create_char 1 model 5@ at $1 $2 $3 store_to $10 
-018C: add_blip_for_char $10 store_to $11
-:ACTION5
-0001: wait 0
-00E6:   is_button_pressed 0 button 10
-004C: goto_if_true @NEXT3
-00E6:   is_button_pressed 0 button 11
-//004C: goto_if_true @NEXT5
-00E6:   is_button_pressed 0 button 9
-004C: goto_if_true @ENDE
-00BC: print_now '~g~Press Left For Prev Char ~g~Press Left For Next Char ~r~Press Down To Close' time 50 flag 1
-0002: goto @ACTION5
 
 :ENDE
 0001: wait 0
