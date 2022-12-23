@@ -1,106 +1,10 @@
 #Game: Liberty City Stories
 #Author: NielsB
-#Version: 3.5
+#Version: 1.6
 #Category: missions
-#Date: 2022-12-12
+#Date: 2022-12-23
 #Description: Create BodyGuard
 
-024C: request_model 2
-024C: request_model 3
-024C: request_model 4
-024C: request_model 5
-024C: request_model 6
-024C: request_model 7
-024C: request_model 9
-024C: request_model 10
-024C: request_model 11
-024C: request_model 12
-024C: request_model 13
-024C: request_model 14
-024C: request_model 15
-024C: request_model 16
-024C: request_model 17
-024C: request_model 18
-024C: request_model 19
-024C: request_model 20
-024C: request_model 21
-024C: request_model 22
-024C: request_model 23
-024C: request_model 24
-024C: request_model 25
-024C: request_model 26
-024C: request_model 27
-024C: request_model 28
-024C: request_model 29
-024C: request_model 30
-024C: request_model 31
-024C: request_model 32
-024C: request_model 33
-024C: request_model 34
-024C: request_model 35
-024C: request_model 36
-024C: request_model 37
-024C: request_model 38
-024C: request_model 39
-024C: request_model 40
-024C: request_model 41
-024C: request_model 42
-024C: request_model 43
-024C: request_model 44
-024C: request_model 45
-024C: request_model 46
-024C: request_model 47
-024C: request_model 48
-024C: request_model 49
-024C: request_model 50
-024C: request_model 51
-024C: request_model 52
-024C: request_model 53
-024C: request_model 54
-024C: request_model 55
-024C: request_model 56
-024C: request_model 57
-024C: request_model 58
-024C: request_model 59
-024C: request_model 60
-024C: request_model 61
-024C: request_model 62
-024C: request_model 63
-024C: request_model 64
-024C: request_model 65
-024C: request_model 66
-024C: request_model 67
-024C: request_model 68
-024C: request_model 79
-024C: request_model 80
-024C: request_model 81
-024C: request_model 82
-024C: request_model 83
-024C: request_model 84
-024C: request_model 85
-024C: request_model 86
-024C: request_model 87
-024C: request_model 88
-024C: request_model 89
-024C: request_model 90
-024C: request_model 91
-024C: request_model 92
-024C: request_model 93
-024C: request_model 94
-024C: request_model 95
-024C: request_model 96
-024C: request_model 97
-024C: request_model 98
-024C: request_model 99
-024C: request_model 100
-024C: request_model 101
-024C: request_model 102
-024C: request_model 103
-024C: request_model 104
-024C: request_model 105
-024C: request_model 106
-024C: request_model 109
-024C: request_model 110
 024C: request_model 259
 024C: request_model 260
 024C: request_model 261
@@ -137,24 +41,24 @@
 024C: request_model 292
 0390: load_all_models_now 
 
-0007: 1@ = 0
-0007: 0@ = 0
-0007: 15@ = 100
+0006: 1@ = 0
+0006: 0@ = 0
 
 0178: set_char_heading $PLAYER_ACTOR to 180.00
 0001: wait 90
-04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR offset 2.0 3.0 -0.6 store_to $1 $2 $3 
+04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR offset 2.0 3.0 -0.85 store_to $1 $2 $3 
 0378: set_camera_behind_player 
-//01B9: set_player_control $PLAYER_CHAR to 0 
+//01B9: set_player_control $PLAYER_CHAR to 0 //Can set on or off
 
 :ADD
-//009B: delete_char $10
 0354: remove_char_elegantly $10 
 0169: remove_blip $11
 0001: wait 90
 0001: wait 90
 :ADD2
 0001: wait 90
+024C: request_model 0@
+0390: load_all_models_now 
 009A: create_char 1 model 0@ at $1 $2 $3 store_to $10 
 018C: add_blip_for_char $10 store_to $11
 016A: change_blip_colour $11 to 7 
@@ -169,7 +73,7 @@
 004C: goto_if_true @ENDE
 00E6:   is_button_pressed 0 button 10
 004C: goto_if_true @JOIN
-00BC: print_now '~g~Press Right For Next char ~r~Press Down To Close ~b~ Press Up For Weapons~t~Left=join no weap' time 50 flag 1
+00BC: print_now '~g~Press Right For Next char ~r~Press Down To Close ~b~ Press Up For Weapons ~t~Left=join no weapon' time 50 flag 1
 01EB: print_with_number_soon '~b~Ped ID ~1~' number 0@ time 1 ms flag 1
 0002: goto @ACTION0
 
@@ -197,7 +101,7 @@
 
 :WEPUP
 0001: wait 0
-01B7: give_weapon_to_char $10 weapon 1@ ammo 9999
+01B7: give_weapon_to_char $10 weapon 1@ ammo 9999  //bodyguards AMMO
 :CHOOSE
 0001: wait 0
 00BC: print_now '~b~Press Up To Change Weapons ~g~Press Right To Join ~r~Press Down To Remove' time 50 flag 1
@@ -224,22 +128,27 @@
 :JOIN
 0001: wait 0
 01E4: tie_char $10 to_player $PLAYER_CHAR
-04FA: set_char_as_player_friend $10 player $PLAYER_CHAR on 1
-0541: set_char_in_players_group_can_fight $10 can_fight 1
-011F: set_char $10 search_threat 128
-0296: set_char_heed_threats $10 flag 1
-0228: set_char_health $10 to 350 
-02E7: set_char_accuracy $10 to 75 
-031E: set_char $10 running 1 
+04FA: set_char_as_player_friend $10 player $PLAYER_CHAR on 1 //says what it does
+0541: set_char_in_players_group_can_fight $10 can_fight 1  //says what it does
+011F: set_char $10 search_threat 128                    //target special chars group
+0296: set_char_heed_threats $10 flag 1                  //says what it does
+0228: set_char_health $10 to 350                    //Changes healt
+02E7: set_char_accuracy $10 to 75                 //says what it does
+031E: set_char $10 running 1                    //says what it does
+//044B: set_char_suffers_critical_hits $10 enable 0 //says what it does
+//02B0: set_char_proofs $10 BP 1 FP 1 EP 1 CP 1 MP 1 //fireproof Bulletproof Exposionproof  
 0169: remove_blip $11
 0002: goto @ADD2
 
+//dissmissed char
 :ENDE
 0001: wait 0
-0248: set_char $10 ped_stats_to 1000000 
+0248: set_char $10 ped_stats_to 0   //unstable
+0228: set_char_health $10 to 350 
+0296: set_char_heed_threats $10 flag 1
 01C7: mark_char_as_no_longer_needed $10
 0169: remove_blip $11
-01B9: set_player_control $PLAYER_CHAR to 1
+//01B9: set_player_control $PLAYER_CHAR to 1
 0001: wait 2000
 
 :TERMIN
