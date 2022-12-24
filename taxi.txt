@@ -1,0 +1,43 @@
+#Game: Liberty City Stories
+#Author: NielsB
+#Version: 3.5
+#Category: missions
+#Date: 2022-12-12
+#Description: Taxi
+
+
+0006: 10@ = 451
+
+024C: request_model 10@
+0390: load_all_models_now 
+
+
+04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR  offset 0 3.0 0.00 store_to 0@ 3@ 2@ 
+
+
+:WEPUP
+0001: wait 0
+010D: delete_object 1@ 
+0001: wait 550
+010C: create_object 10@ at 0@ 3@ 2@ store_to 1@ 
+:CHOOSE
+0001: wait 0
+00E6:   is_button_pressed 0 button 8
+004C: goto_if_true @WEPUP1
+00E6:   is_button_pressed 0 button 9
+004C: goto_if_true @ENDE
+00E6:   is_button_pressed 0 button 10
+004C: goto_if_true @Place
+01EB: print_with_number_soon '~p~obj ID ~1~' number 10@ time 1 ms flag 1
+0002: goto @CHOOSE
+
+:WEPUP1
+0001: wait 100
+000A: 10@ += 1
+0002: goto @WEPUP
+
+:ENDE
+010D: delete_object 1@ 
+
+:Place
+004E: terminate_this_script
