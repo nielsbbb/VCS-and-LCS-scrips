@@ -4,8 +4,10 @@
 #Category: missions
 #Date: 2022-12-12
 #Description: Taxi
-
-
+0458: set_object_rotation 4@ to 0 0 180.0 
+01C1: set_object_coordinates 1@ to 5@ 6@ 7@ 
+0397: set_object_dynamic 1@ 0 
+0387: set_object_collision 1@ enable 0
 0006: 10@ = 451
 
 024C: request_model 10@
