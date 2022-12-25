@@ -1,11 +1,11 @@
 
 
 010C: create_object 447 at -1375.41 -950.69 37.94 store_to 1@  
-010C: create_object 447 at -1379.81 -952.69 34.84 store_to 1@
-010C: create_object 447 at -1382.41 -953.69 28.64 store_to 1@
-010C: create_object 447 at -1385.91 -954.69 23.04 store_to 1@
-010C: create_object 447 at -1390.81 -955.69 18.54 store_to 1@
-010C: create_object 447 at -1396.51 -957.69 15.24 store_to 1@
+010C: create_object 447 at -1375.41 -952.69 34.84 store_to 2@
+010C: create_object 447 at -1375.41 -953.69 28.64 store_to 3@
+010C: create_object 447 at -1375.41 -954.69 23.04 store_to 4@
+010C: create_object 447 at -1375.41 -955.69 18.54 store_to 5@
+010C: create_object 447 at -1375.41 -957.69 15.24 store_to 6@
 
 move(6.70,0.02,0.00);  object(0x01BF,90,0,270);
 move(4.40,-0.02,-3.10);  object(0x01BF,20,0,270);
