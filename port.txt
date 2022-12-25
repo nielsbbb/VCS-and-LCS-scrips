@@ -7,6 +7,12 @@
 010C: create_object 447 at -1375.41 -955.69 18.54 store_to 5@
 010C: create_object 447 at -1375.41 -957.69 15.24 store_to 6@
 
+0458: set_object_rotation 1@ to 90 0 270 
+0458: set_object_rotation 2@ to 20 0 270 
+0458: set_object_rotation 3@ to 25 0 270 
+0458: set_object_rotation 4@ to 40 0 270 
+0458: set_object_rotation 5@ to 55 0 270 
+
 move(6.70,0.02,0.00);  object(0x01BF,90,0,270);
 move(4.40,-0.02,-3.10);  object(0x01BF,20,0,270);
 move(2.60,-0.01,-6.20);  object(0x01BF,25,0,270);
