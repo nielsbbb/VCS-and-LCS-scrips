@@ -1,0 +1,229 @@
+-297 a bird and vent
+-296 big fence danger
+-295 fence
+-294 small fence
+-293 fence
+-292 toolbox
+-291 a hole to far paper
+-290 top secret
+-289 papers
+-288 mayor stand
+-287 garage door
+-285 meat
+-284 saw blade
+-283 saw
+-282 barrel orange
+-281 wood pice
+-280 cone
+-279 money pickup
+-277 chair
+-276 radio
+-275 explosive barrel
+-274 candle
+-273 boat door
+-272 wooden box
+-271 rusted bus
+-270 rusted car
+-269 plank
+-268 pizza box
+-267 noodle box
+-266 trash bin
+-223 slomo pickup
+-222 gta 3 pickup
+-221 green wall
+-223 door
+-219 fence
+-218 window
+-217 window
+-203 ramp
+-202 ramp
+-201 pallet with stones
+-200 paper machine
+-199 rusty barrel
+-198 police Star
+-197 rampage icon
+-196 food
+-195 health pickups
+-194 clothes pickup
+-193 save icon
+-192 suitcase
+-191 interior Salvatore
+-190 police blockade
+-187 information pickup
+-160 door
+-124 jet open door
+-30 road block
+-28 cables
+-26 orange Block
+-22 construction things
+-20 lights
+-18 bridge
+-16 bridge
+-9 stone
+-6 lights
+-4 bridge 
+
+
+
+259-> 292 players weapons and inventory items 
+293 small white something
+294 part of gun
+301 piece of SSV Bridge?(huge)
+302 piece of SSV Bridge?(huge)
+305 piece of SSV Bridge?(huge)
+314 piece of SSV Bridge?(huge)
+315 piece of SSV Bridge?(huge)
+316 subway (huge)
+317 subway (huge)
+318 subway (huge)
+319 subway small
+320 subway (huge)
+321 subway huge
+322 subway  small
+323 subway (huge)
+324 subway ()
+325 subway 
+326 subway  
+327 subway 
+363 part road
+379 road
+391 part subway
+392 part subway
+393 part subway
+394 part subway
+424 garage door
+439 garage door n2
+447 green wall
+448 green wall
+451 grey something
+452 grey something
+478  iron gate
+480 iron gate
+481 green large wall
+484 fence gate
+486 door?
+490 road block big
+494 small barrier 
+495 small barrier
+496 small barrier
+497 small barrier
+498 fence
+499 fence
+514 red wall small
+516 big garage door
+518 suitcase 
+519 buoy
+520 hidden package
+521 watertap for fire dept
+522 money
+523 mine
+534 paperwork
+535 window
+527 light pole small
+528 door
+529 garage door
+530 garage door
+531 telephone cell
+532 rusty barrel
+533 barrel orange
+534 pallet
+535 carton box
+536 carton box bigger
+537 barrel red
+538 street light
+539 wooden box
+540 explosive barrel
+541 street light part
+542 parking meter
+543 trash bin
+544 trash container
+545 road block can be broken
+546 road sign
+547 carton
+548 street light
+549 street light
+550 sign no parking
+551 pole
+552 trash bin
+554 basket with food?
+555 traffic Block can be broken
+556 cone
+557 559 initial pickups
+560 wood piece
+561 cocaine
+562 paperwork
+563 ?
+564 ?
+565 window part building
+566 window part of building
+567 buoy huge 
+568 ?
+569 garage door with hole
+570 door
+571 gas pump
+573 blood splatter
+574 door
+575 wanted star pickup
+576 black object
+578 door
+580 pole
+581 bomb
+582 glass
+583 film pickup
+584 rampage icon
+585 fish
+586 traffic lights 
+587 Kevlar
+589 light pole
+590 part of traffic light
+591 part of traffic light
+592 part of traffic light
+593 mummy
+596 lights
+597 bin
+598 news stand
+599 bank
+600 wood
+601 bin 
+602 sellers stand
+603 mark bistro bank
+604 expresso stand
+605 lights
+606 noodles stand
+607 food stand
+609 light pole
+616 three
+617 three
+618 three
+619 three
+620 three
+621 three
+622 three
+623 three
+624 three
+625 three
+626 three
+627 three
+636 three
+637 three
+873 garage door
+923 door
+928 garage door
+997 garage door
+1095 garage door
+1116 garage door
+1220 car crusher part
+1569 non solid grey wall
+1598 garage door 
+1599 garage door
+1600 garage door
+1601 garage door
+1602 garage door
+1622 garage door
+1633 garage door
+1710 garage door
+1712 garage door
+ after 2000?
+
+
+
