@@ -1,0 +1,181 @@
+#Game: Liberty City Stories
+#Author: NielsB
+#Version: 2
+#Category: missions
+#Date: 2022-12-29
+#Description: Spawns a battle bobcat
+
+024C: request_model 270
+024C: request_model 271
+024C: request_model 272
+024C: request_model 273
+024C: request_model 274
+024C: request_model 275
+024C: request_model 276
+024C: request_model 277
+024C: request_model 278
+024C: request_model 279
+024C: request_model 280
+024C: request_model 281
+024C: request_model 282
+024C: request_model 283
+024C: request_model 284
+024C: request_model 285
+024C: request_model 286
+024C: request_model 287
+024C: request_model 288
+024C: request_model 289
+
+0007: 13@ = 12
+0007: 12@ = 12
+0006: 15@ = 99
+0006: 11@ = 98
+0006: 10@ = 153
+024C: request_model 15@
+024C: request_model 11@
+024C: request_model 10@
+0390: load_all_models_now
+
+00BC: print_now '~b~Press Up and Down To Change guard Weapons ~g~Press Left To Spawn' time 2500 flag 1
+0001: wait 2500
+
+:CHOOSE
+0001: wait 0
+00E6:   is_button_pressed 0 button 8
+004C: goto_if_true @WEPUP1
+00E6:   is_button_pressed 0 button 9
+004C: goto_if_true @WEPUP2
+00E6:   is_button_pressed 0 button 11
+004C: goto_if_true @CREATE
+01EB: print_with_number_soon '~p~Guard 1 Weopon ~1~ press Up to change' number 12@ time 1 ms flag 1
+01EB: print_with_number_soon '~t~Guard 2 Weopon ~1~ press Down to change' number 13@ time 1 ms flag 1
+0002: goto @CHOOSE
+
+:WEPUP2
+0001: wait 100
+000A: 13@ += 1
+0038: 13@ == 13
+004C: goto_if_true @FAILSAVE20
+0038: 13@ == 16
+004C: goto_if_true @FAILSAVE30
+0038: 13@ == 33
+004C: goto_if_true @FAILSAVE40
+0002: goto @CHOOSE
+
+:FAILSAVE20
+0007: 13@ = 15
+0002: goto @CHOOSE
+
+:FAILSAVE30
+0007: 13@ = 17
+0002: goto @CHOOSE
+
+:FAILSAVE40
+0007: 13@ = 12
+0002: goto @CHOOSE
+
+:FAILSAVE2
+0007: 12@ = 15
+0002: goto @CHOOSE
+
+:FAILSAVE3
+0007: 12@ = 17
+0002: goto @CHOOSE
+
+:FAILSAVE4
+0007: 12@ = 12
+0002: goto @CHOOSE
+
+:WEPUP1
+0001: wait 100
+000A: 12@ += 1
+0038: 12@ == 13
+004C: goto_if_true @FAILSAVE2
+0038: 12@ == 16
+004C: goto_if_true @FAILSAVE3
+0038: 12@ == 33
+004C: goto_if_true @FAILSAVE4
+0002: goto @CHOOSE
+
+:CREATE
+04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR  offset 0 3.0 0 store_to 0@ 3@ 2@
+009A: create_char 1 model 11@ at 1.0 2.0 3.0 store_to 6@
+009A: create_char 1 model 15@ at 1.0 2.0 3.0 store_to 9@
+01E4: tie_char 9@ to_player $PLAYER_CHAR
+01E4: tie_char 6@ to_player $PLAYER_CHAR
+04FA: set_char_as_player_friend 9@ player $PLAYER_CHAR on 1 
+0541: set_char_in_players_group_can_fight 9@ can_fight 1 
+0296: set_char_heed_threats 9@ flag 0                  
+0228: set_char_health 9@ to 350                    
+02E7: set_char_accuracy 9@ to 75 
+04FA: set_char_as_player_friend 6@ player $PLAYER_CHAR on 1 
+0541: set_char_in_players_group_can_fight 6@ can_fight 1 
+011F: set_char 6@ search_threat 4 
+011F: set_char 6@ search_threat 8
+011F: set_char 6@ search_threat 64 
+011F: set_char 6@ search_threat 128 
+011F: set_char 6@ search_threat 256 
+011F: set_char 6@ search_threat 512 
+011F: set_char 6@ search_threat 1024 
+011F: set_char 6@ search_threat 2048 
+011F: set_char 6@ search_threat 4096 
+011F: set_char 6@ search_threat 8192 
+011F: set_char 6@ search_threat 32768 
+011F: set_char 6@ search_threat 16384 
+011F: set_char 6@ search_threat 65536  
+011F: set_char 6@ search_threat 1048576  
+011F: set_char 9@ search_threat 4 
+011F: set_char 9@ search_threat 8
+011F: set_char 9@ search_threat 64 
+011F: set_char 9@ search_threat 128 
+011F: set_char 9@ search_threat 256 
+011F: set_char 9@ search_threat 512 
+011F: set_char 9@ search_threat 1024 
+011F: set_char 9@ search_threat 2048 
+011F: set_char 9@ search_threat 4096 
+011F: set_char 9@ search_threat 8192 
+011F: set_char 9@ search_threat 32768 
+011F: set_char 9@ search_threat 16384 
+011F: set_char 9@ search_threat 65536
+0296: set_char_heed_threats 6@ flag 0                 
+0228: set_char_health 6@ to 350                    
+02E7: set_char_accuracy 6@ to 75 
+00A5: create_car 10@ at 0@ 3@ 2@ store_to 8@
+02B1: set_car_proofs 8@ BP 1 FP 1 EP 1 CP 1 MP 1 
+022E: change_car_colour 8@ primary_to 50 secondary_to 60 
+017A: set_car_heading 8@ to 100.0 
+0469: attach_ped_to_car 9@ car 8@ offset 0 -1.90 0.73 position 0 angle_limit 360.0 weapon 13@
+0469: attach_ped_to_car 6@ car 8@ offset 0 -1.00 0.73 position 0 angle_limit 360.0 weapon 12@
+04F0: set_char_crouch 6@ to 1 set_char_crouch -1
+04F0: set_char_crouch 9@ to 1 set_char_crouch -1
+02B0: set_char_proofs 6@ BP 0 FP 1 EP 0 CP 0 MP 0 
+02B0: set_char_proofs 9@ BP 0 FP 1 EP 0 CP 0 MP 0 
+01C8: mark_car_as_no_longer_needed 8@ 
+
+:CRCH1
+0001: wait 10
+011C:   is_player_dead $PLAYER_CHAR
+004C: goto_if_true @UNLOAD
+011D:   is_char_dead 6@
+004C: goto_if_true @UNLOAD
+011D:   is_char_dead 9@
+004C: goto_if_true @UNLOAD
+02E5:   is_char_shooting 6@ 
+004C: goto_if_true @CRCH
+02E5:   is_char_shooting 9@ 
+004C: goto_if_true @CRCH
+0002: goto @CRCH1
+
+:CRCH
+0001: wait 5000
+04F0: set_char_crouch 6@ to 1 set_char_crouch -1
+04F0: set_char_crouch 9@ to 1 set_char_crouch -1
+0002: goto @CRCH1
+
+:UNLOAD
+01C7: mark_char_as_no_longer_needed 6@ 
+01C7: mark_char_as_no_longer_needed 9@
+:END
+004E: terminate_this_script
+
+
