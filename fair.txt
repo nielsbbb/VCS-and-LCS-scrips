@@ -1,0 +1,215 @@
+#Game: Liberty City Stories
+#Author: NielsB
+#Version: 7
+#Category: missions
+#Date: 2022-03-10
+#Description: Simple mision with markers.
+
+0002: goto @FIND
+
+:RETRY
+0001: wait 0
+01C7: mark_char_as_no_longer_needed 5@
+0169: remove_blip 6@
+
+:FIND
+//04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR offset -4.0 -4.0 0 store_to 1@ 2@ 8@
+0054: get_player_coordinates $PLAYER_CHAR store_to 1@ 2@ 8@
+0175: get_player_heading $PLAYER_CHAR store_to 21@
+
+002B:   90.0 >= 21@
+004C: goto_if_true @XminusYplus
+0002: goto @other
+:XminusYplus
+0007: 20@ = 3.0
+0063: 1@ -= 20@
+0087: 3@ = 1@
+0087: 4@ = 2@
+000B: 3@ += 6.00
+000B: 4@ += 6.00
+0002: goto @CHARREC
+
+:other
+002B:   180.0 >= 21@
+004C: goto_if_true @coords
+0002: goto @other2
+:coords
+0007: 20@ = 3.0
+0007: 21@ = 6.0
+0087: 3@ = 1@
+0087: 4@ = 2@
+0063: 1@ -= 20@
+0063: 3@ -= 20@
+0063: 4@ -= 21@
+000B: 3@ += 6.00
+0002: goto @CHARREC
+
+:other2
+002B:   270.0 >= 21@
+004C: goto_if_true @coords2
+0002: goto @other3
+:coords2
+0007: 20@ = 3.0
+0007: 21@ = 6.0
+000B: 2@ += 3.00
+0087: 3@ = 1@
+0087: 4@ = 2@
+0063: 3@ -= 21@
+0063: 4@ -= 21@
+000B: 3@ += 6.00
+000B: 3@ += 6.00
+0002: goto @CHARREC
+
+:other3
+002B:   360.0 >= 21@
+004C: goto_if_true @coords3
+:coords3
+0007: 20@ = 3.0
+0007: 21@ = 6.0
+0087: 3@ = 1@
+0087: 4@ = 2@
+0063: 3@ -= 21@
+000B: 4@ += 6.00
+000B: 1@ += 3.00
+0002: goto @CHARREC
+
+:CHARREC
+//02E1: get_random_char_in_area from 1@ 2@ to 3@ 4@ civilian 1 gang 1 criminal/prostitute 1 store_to 5@
+05D6: get_random_char_in_area_no_checks from 1@ 2@ to 3@ 4@ store_to 5@
+
+
+
+00E4:   is_char_in_any_car 5@
+004C: goto_if_true @RETRY
+011D:   is_char_dead 5@
+004C: goto_if_true @RETRY
+02F7:   is_char_model 5@ model 0
+004C: goto_if_true @RETRY
+02F7:   is_char_model 5@ model 1
+004C: goto_if_true @RETRY
+02F7:   is_char_model 5@ model 2
+004C: goto_if_true @RETRY
+02F7:   is_char_model 5@ model 3
+004C: goto_if_true @RETRY
+02F7:   is_char_model 5@ model 4
+004C: goto_if_true @RETRY
+0572:   does_char_exist 5@
+004D: goto_if_false @RETRY
+
+02E5:   is_char_shooting 5@
+004C: goto_if_true @INSTANT
+
+018C: add_blip_for_char 5@ store_to 6@
+0296: set_char_heed_threats 5@ flag 1
+0248: set_char 5@ ped_stats_to 16
+
+
+045C:   is_player_targetting_char $PLAYER_CHAR char 5@
+004C: goto_if_true @DAMAGED
+:DAMAGED
+0001: wait 500
+051F:   has_char_been_damaged_by_char 5@ char $PLAYER_CHAR
+004C: goto_if_true @TRIGGER
+
+0001: wait 1500
+051F:   has_char_been_damaged_by_char $PLAYER_ACTOR char 5@
+004D: goto_if_false @RETRY
+
+:TRIGGER
+0169: remove_blip 6@
+01CF: set_char_obj_kill_player_on_foot 5@ player $PLAYER_CHAR
+:INSTANT
+009A: create_char 1 model 1 at 1@ 2@ 8@ store_to 11@
+01B7: give_weapon_to_char 11@ weapon 17 ammo 2000
+01B7: give_weapon_to_char 11@ weapon 4 ammo 20
+
+02E5:   is_char_shooting 5@
+004C: goto_if_true @PISTOL
+
+0496:   has_char_got_weapon 5@ weapon 17
+004C: goto_if_true @PISTOL
+
+0496:   has_char_got_weapon 5@ weapon 0
+004C: goto_if_true @STICK
+
+:STICK
+01BE: set_current_char_weapon 11@ to 4
+0002: goto @CHARS
+
+:PISTOL
+01BE: set_current_char_weapon 11@ to 17
+0002: goto @CHARS
+
+:CHARS
+0001: wait 10
+01CE: set_char_obj_kill_char_on_foot 11@ char 5@
+02C6: get_closest_car_node 45@ 46@ 47@ store_to 45@ 46@ 47@
+02C5: get_closest_char_node 48@ 49@ 50@ store_to 48@ 49@ 50@
+046E: get_random_cop_in_area 45@ 46@ to 48@ 49@ cop 1 swat 1 fbi 1 army%8h% vice 1 store_to 51@ 51@
+0572:   does_char_exist 51@
+004D: goto_if_false @NEXT
+01CE: set_char_obj_kill_char_on_foot 51@ char 5@
+
+:NEXT
+00DB: if or
+011D:   is_char_dead 5@
+011D:   is_char_dead 11@
+004D: goto_if_false @CHARS
+
+011D:   is_char_dead 11@
+004C: goto_if_true @BACKUP
+0002: goto @NORMTERMIN
+
+:BACKUP
+024C: request_model 157
+0390: load_all_models_now
+00A0: get_char_coordinates 5@ store_to 55@ 56@ 57@
+02C6: get_closest_car_node 55@ 56@ 57@ store_to 52@ 53@ 54@
+00A5: create_car 157 at 52@ 53@ 54@ store_to 15@
+039C: switch_car_siren 15@ to 1
+012E: create_char_inside_car 15@ pedtype 1 model 1 store_to 16@
+01B7: give_weapon_to_char 16@ weapon 17 ammo 2000
+01CD: create_char_as_passenger 15@ pedtype 1 model 1 seat 2 store_to 17@
+01B7: give_weapon_to_char 17@ weapon 19 ammo 2000
+03E7: char 17@ exit_car
+01CE: set_char_obj_kill_char_on_foot 17@ char 5@
+01CE: set_char_obj_kill_char_on_foot 16@ char 5@
+
+:CHARSS
+0001: wait 10
+011D:   is_char_dead 5@
+004D: goto_if_false @CHARSS
+
+01DA: set_char_obj_enter_car_as_driver 17@ car 15@
+01D9: set_char_obj_enter_car_as_passenger 16@ car 15@
+039C: switch_car_siren 15@ to 0
+
+:CHECKS
+0001: wait 10
+011D:   is_char_dead 16@
+004C: goto_if_true @TERRM
+011D:   is_char_dead 17@
+004C: goto_if_true @TERRM
+00DB: if and
+00E0:   is_char_in_car 17@ car 15@
+00E0:   is_char_in_car 16@ car 15@
+004D: goto_if_false @CHECKS
+
+00AD: set_car_cruise_speed 15@ to 50.0
+00AE: set_car_driving_style 15@ to 3
+
+:TERRM
+01C7: mark_char_as_no_longer_needed 15@
+01C7: mark_char_as_no_longer_needed 17@
+01C8: mark_car_as_no_longer_needed 15@
+024E: mark_model_as_no_longer_needed 157
+
+:NORMTERMIN
+01BE: set_current_char_weapon 11@ to 0
+01C7: mark_char_as_no_longer_needed 5@
+01C7: mark_char_as_no_longer_needed 11@
+01C7: mark_char_as_no_longer_needed 9@
+
+
+
+004E: terminate_this_script

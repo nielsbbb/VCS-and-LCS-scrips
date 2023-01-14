@@ -5,7 +5,7 @@
 #Date: 2022-12-12
 #Description: ramp
 
-0006: 10@ = 447
+0006: 10@ = -202
 
 //540 isEXPLObarrel
 
@@ -13,12 +13,18 @@
 0390: load_all_models_now 
 
 
-04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR offset 0 3.0 -2.80 store_to 1@ 2@ 3@ 
-0177: get_char_heading $PLAYER_ACTOR store_to 0@
+04C9: get_offset_from_char_in_world_coords $PLAYER_ACTOR offset 0 9.0 -0.90 store_to 1@ 2@ 3@ 
+0177: get_char_heading $PLAYER_ACTOR store_to 9@
 0378: set_camera_behind_player
 
-010C: create_object 10@ at 1@ 2@ 3@  store_to 5@  
-//01C1: set_object_coordinates 5@ to 1@ 2@ 3@ 
-0458: set_object_rotation 5@ to -60.00 0 0@ 
+010C: create_object 10@ at 1@ 2@ 3@  store_to 5@
+  0001: wait 1000
+0458: set_object_rotation 5@ to 0 0 9@ 
+//0387: set_object_collision 5@ enable 1
+//0555: freeze_object_position 49@ to 1 
+  0001: wait 1000
+0001: wait 100
+000A: 9@ += 60.00
+0458: set_object_rotation 5@ to 0 0 9@
 
 004E: terminate_this_script
