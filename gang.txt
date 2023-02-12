@@ -15,4 +15,6 @@
 0157: set_gang 8 primary_weapon_to 28 secondary_weapon_to 0
 0157: set_gang 7 primary_weapon_to 28 secondary_weapon_to 0
 
+0155: set_gang_ped_models 8 to 0 0
+0156: set_gang_car_model 0 to 210
 0023: terminate_this_script
