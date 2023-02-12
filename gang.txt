@@ -1,0 +1,18 @@
+#Game: Vice City Stories
+#Author: NielsB
+#Version: 1.0
+#Category: Fun
+#Date: 2023-01-05
+#Description: Light Bodyguard editor.
+
+0157: set_gang 0 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 1 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 2 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 3 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 4 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 5 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 6 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 8 primary_weapon_to 28 secondary_weapon_to 0
+0157: set_gang 7 primary_weapon_to 28 secondary_weapon_to 0
+
+0023: terminate_this_script
