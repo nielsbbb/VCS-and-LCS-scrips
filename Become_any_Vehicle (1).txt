@@ -1,0 +1,80 @@
+##Game: Vice City Stories
+##Author: NielsB ~h~Credits freakler OG car become
+##Version: 1.1
+##Category: Vehicles
+##Date: 2023-01-07
+##Description: Spawns Vehicle  where you are standing and teleports player inside.
+
+
+0006: 20@ = 170 //Vehicle ID
+
+:BECOMECAR
+0001: wait 0
+011F: print_with_number_now '~r~Car ID ~1~' number 20@ time 6000 flag 1												
+0160: request_model 20@ 										
+0228: load_all_models_now 										
+0043: get_char_coordinates $PLAYER_CHAR store_to 0@ 1@ 2@ 		
+00CE: get_char_heading $PLAYER_CHAR store_to 3@ 				
+01BB: get_ground_z_for_3d_coord 0@ 1@ 2@ store_to 4@ 			
+0048: create_car 20@ at 0@ 1@ 4@ store_to 5@ 					
+00D1: set_car_heading 5@ to 3@ 									
+021C: warp_char_into_car $PLAYER_CHAR to 5@
+0162: mark_model_as_no_longer_needed 20@		
+0221: set_camera_behind_player 
+01CF: restore_camera_jumpcut
+0323: print_help_forever '~h~Press ~O~ ~w~To Change Car Model ~n~~h~Press D-Pad Up ~w~To Change color ~n~~h~Press ~X~ ~w~To Leave Car Model'
+0001: wait 200
+
+:CAR
+0001: wait 0
+007F:   is_button_pressed 0 button 17
+0022: goto_if_false @OPTION4
+0002: goto @NEXTC
+:OPTION4
+007F:   is_button_pressed 0 button 8
+0022: goto_if_false @OPTION1
+0002: goto @COLOR
+:OPTION1
+007F:   is_button_pressed 0 button 16
+0022: goto_if_false @OPTION2
+0002: goto @EXIT
+:OPTION2
+0002: goto @CAR
+					
+:NEXTC
+0001: wait 10
+0216: warp_char_from_car_to_coord $PLAYER_CHAR coord 0@ 1@ 2@
+0049: delete_car 5@
+0007: 20@ += 1
+001B: 20@ == 242
+0022: goto_if_false @OKE2
+0002: goto @TOPFUN
+:OKE2
+001B: 20@ == 280
+0022: goto_if_false @OKE
+0002: goto @CRASH
+:OKE
+0002: goto @BECOMECAR		
+
+:TOPFUN
+0001: wait 10
+0004: 20@ = 243
+0002: goto @BECOMECAR
+
+:CRASH
+0001: wait 10
+0004: 20@ = 170
+0002: goto @BECOMECAR
+
+:COLOR
+0001: wait 100
+0139: generate_random_int_in_range 0 100 store_to 11@ 
+0139: generate_random_int_in_range 0 100 store_to 12@
+0150: change_car_colour 5@ primary_to 11@ secondary_to 12@ 
+0002: goto @CAR
+ 
+:EXIT
+0113: mark_car_as_no_longer_needed 5@
+0059: clear_prints
+0268: clear_help
+0023: terminate_this_script
