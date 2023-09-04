@@ -28,3 +28,50 @@
 0458: set_object_rotation 5@ to 0 0 9@
 
 004E: terminate_this_script
+
+010C: create_object 3841 at -1285.0 -962.0 11.0 store_to 1@
+0458: set_object_rotation 1@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -955.96 14.4 store_to 2@
+0458: set_object_rotation 2@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -955.95 17.84 store_to 3@
+0458: set_object_rotation 3@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -962.28 21.24 store_to 4@
+0458: set_object_rotation 4@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -962.68 24.64 store_to 5@
+0458: set_object_rotation 5@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -962.36 28.14 store_to 6@
+0458: set_object_rotation 6@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -961.0 32.04 store_to 7@
+0458: set_object_rotation 7@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -959.56 36.64 store_to 8@
+0458: set_object_rotation 8@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -957.99 40.84 store_to 9@
+0458: set_object_rotation 9@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -957.44 45.94 store_to 10@
+0458: set_object_rotation 10@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -958.6 51.04 store_to 11@
+0458: set_object_rotation 11@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -960.41 56.64 store_to 12@
+0458: set_object_rotation 12@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -961.25 61.24 store_to 13@
+0458: set_object_rotation 13@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -961.91 65.94 store_to 14@
+0458: set_object_rotation 14@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -961.07 70.54 store_to 15@
+0458: set_object_rotation 15@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -960.28 74.24 store_to 16@
+0458: set_object_rotation 16@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -960.18 76.64 store_to 17@
+0458: set_object_rotation 17@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -961.68 80.54 store_to 18@
+0458: set_object_rotation 18@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -963.71 85.54 store_to 19@
+0458: set_object_rotation 19@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -962.27 89.94 store_to 20@
+0458: set_object_rotation 20@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -955.83 93.24 store_to 21@
+0458: set_object_rotation 21@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -953.8 96.74 store_to 22@
+0458: set_object_rotation 22@ to 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -955.24 100.84 store_to 23@
+0458: set_object_rotation 23@ to 240.0 0.0 180.0
