@@ -141,3 +141,19 @@ new 3
 
 010C: create_object 3841 at 113.6 -747.17 63.60 store_to 22@
 0458: set_object_rotation 22@ 300.0 0.0 180.0
+
+
+
+
+n
+
+
+RAW:
+moveto(114,-755,28);     object(0x0F01,240,0,180);
+move(0.00,-6.04,3.40);   object(0x0F01,240,0,180);
+
+SCM
+010C: create_object 3841 at 114.0 -755.0 28.0 store_to 1@    
+0458: set_object_rotation 1@ 240.0 0.0 180.0
+010C: create_object 3841 114.0 -748.96 31.40 store_to 2@ 
+0458: set_object_rotation 2@ 240.0 0.0 180.0
