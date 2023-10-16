@@ -1,3 +1,38 @@
+n
+
+010C: create_object 3841 at -1285.0 -962.0 11.0 store_to 16@
+0458: set_object_rotation 16@ 240.0 0.0 180.0
+010C: create_object 3841 at 0.0 -6.04 3.40 store_to 17@
+0458: set_object_rotation 17@ 240.0 0.0 180.0
+010C: create_object 3841 at 0.0 -6.05 3.40 store_to 18@
+0458: set_object_rotation 18@ 240.0 0.0 180.0
+010C: create_object 3841 at 0.0 -6.36 3.40 store_to 19@
+0458: set_object_rotation 19@ 240.0 0.0 180.0
+010C: create_object 3841 at -0.4 -5.98 3.40 store_to 20@
+0458: set_object_rotation 20@ 240.0 0.0 180.0
+010C: create_object 3841 at -0.4 -6.34 3.50 store_to 21@
+0458: set_object_rotation 21@ 240.0 0.0 180.0
+010C: create_object 3841 at -0.4 -5.40 3.90 store_to 22@
+0458: set_object_rotation 22@ 230.0 0.0 180.0
+010C: create_object 3841 at -0.4 -4.28 4.60 store_to 23@
+0458: set_object_rotation 23@ 220.0 0.0 180.0
+010C: create_object 3841 at -0.4 -2.71 4.20 store_to 24@
+0458: set_object_rotation 24@ 200.0 0.0 180.0
+010C: create_object 3841 at -0.4 -0.55 5.10 store_to 25@
+0458: set_object_rotation 25@ 180.0 0.0 180.0
+010C: create_object 3841 at -0.4 1.16 5.60 store_to 26@
+0458: set_object_rotation 26@ 160.0 0.0 180.0
+010C: create_object 3841 at -0.4 2.99 4.60 store_to 27@
+0458: set_object_rotation 27@ 140.0 0.0 180.0
+010C: create_object 3841 at -0.4 4.85 3.70 store_to 28@
+0458: set_object_rotation 28@ 120.0 0.0 180.0
+010C: create_object 3841 at -0.4 5.93 1.70 store_to 29@
+0458: set_object_rotation 29@ 100.0 0.0 180.0
+010C: create_object 3841 at -0.4 5.22 0.00 store_to 30@
+0458: set_object_rotation 30@ 80.0 0.0 180.0
+
+
+n
 010C: create_object 3841 at -1285.0 -962.0 11.0 store_to 1@
 0458: set_object_rotation 1@ 240.0 0.0 180.0
 010C: create_object 3841 -1285.0 -955.96 14.40 store_to 2@
