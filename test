@@ -1,3 +1,49 @@
+:STUNT_LOOP
+010C: create_object 3841 at -1285.0 -962.0 11.0 store_to 1@
+0458: set_object_rotation 1@ 240.0 0.0 180.0
+
+// Hieronder volgen de bewegingen
+010C: create_object 3841 at -1285.0 -955.96 14.40 store_to 2@
+0458: set_object_rotation 2@ 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -949.91 17.80 store_to 3@
+0458: set_object_rotation 3@ 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -943.55 21.20 store_to 4@
+0458: set_object_rotation 4@ 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -937.19 24.60 store_to 5@
+0458: set_object_rotation 5@ 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -931.23 28.10 store_to 6@
+0458: set_object_rotation 6@ 240.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -924.88 32.50 store_to 7@
+0458: set_object_rotation 7@ 230.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -918.79 37.10 store_to 8@
+0458: set_object_rotation 8@ 220.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -910.48 41.30 store_to 9@
+0458: set_object_rotation 9@ 200.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -901.93 46.40 store_to 10@
+0458: set_object_rotation 10@ 180.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -893.43 51.50 store_to 11@
+0458: set_object_rotation 11@ 160.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -889.44 56.50 store_to 12@
+0458: set_object_rotation 12@ 140.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -883.1 61.60 store_to 13@
+0458: set_object_rotation 13@ 120.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -875.75 66.40 store_to 14@
+0458: set_object_rotation 14@ 100.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -870.77 69.70 store_to 15@
+0458: set_object_rotation 15@ 80.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -867.67 72.10 store_to 16@
+0458: set_object_rotation 16@ 60.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -865.09 74.50 store_to 17@
+0458: set_object_rotation 17@ 40.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -861.95 78.90 store_to 18@
+0458: set_object_rotation 18@ 20.0 0.0 180.0
+010C: create_object 3841 at -1285.0 -858.83 83.20 store_to 19@
+0458: set_object_rotation 19@ 0.0 0.0 180.0
+
+// Voeg meer bewegingen toe zoals hierboven
+0002: jump @STUNT_LOOP
+
+n
 010C: create_object 3841 at 114.0 -755.0 28.0 store_to 1@
 0458: set_object_rotation 1@ 240.0 0.0 180.0
 010C: create_object 3841 at 114.0 -748.94 31.40 store_to 2@
